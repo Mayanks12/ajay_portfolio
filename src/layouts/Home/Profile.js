@@ -1,7 +1,5 @@
 import profileKatakana from 'assets/katakana-profile.svg?url';
-import profileImgLarge from 'assets/profile-large.jpg';
 import profileImgPlaceholder from 'assets/profile-placeholder.jpg';
-import profileImg from 'assets/profile.jpg';
 import { Button } from 'components/Button';
 import { DecoderText } from 'components/DecoderText';
 import { Divider } from 'components/Divider';
