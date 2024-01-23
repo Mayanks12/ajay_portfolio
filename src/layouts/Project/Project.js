@@ -21,7 +21,10 @@ export function ProjectHeader({
   className,
 }) {
   return (
-    <Section className={classes(styles.header, className)} as="section">
+    <Section
+      className={classes(styles.header, className)}
+      as="section"
+    >
       <div
         className={styles.headerContent}
         style={cssProps({ initDelay: numToMs(initDelay) })}
@@ -50,7 +53,9 @@ export function ProjectHeader({
             {roles?.map((role, index) => (
               <li
                 className={styles.metaItem}
-                style={cssProps({ delay: numToMs(initDelay + 300 + index * 140) })}
+                style={cssProps({
+                  delay: numToMs(initDelay + 300 + index * 140),
+                })}
                 key={role}
               >
                 <Text secondary>{role}</Text>
@@ -79,7 +84,7 @@ export const ProjectSection = forwardRef(
       children,
       ...rest
     },
-    ref
+    ref,
   ) => (
     <section
       className={classes(styles.section, className)}
@@ -96,32 +101,42 @@ export const ProjectSection = forwardRef(
           {backgroundElement}
         </div>
       )}
-      <Section className={styles.sectionInner} data-padding={padding}>
-        {children}
-      </Section>
+      {/*<Section className={styles.sectionInner} data-padding={padding}>*/}
+      {/*  {children}*/}
+      {/*</Section>*/}
     </section>
-  )
+  ),
 );
 
-export const ProjectBackground = ({ opacity = 0.7, className, ...rest }) => {
+export const ProjectBackground = ({
+  opacity = 0.7,
+  className,
+  ...rest
+}) => {
   const imageRef = useRef();
 
-  useParallax(0.6, value => {
+  useParallax(0.6, (value) => {
     if (!imageRef.current) return;
     imageRef.current.style.setProperty('--offset', `${value}px`);
   });
 
   return (
     <Transition in timeout={msToNum(tokens.base.durationM)}>
-      {visible => (
+      {(visible) => (
         <div
           className={classes(styles.backgroundImage, className)}
           data-visible={visible}
         >
-          <div className={styles.backgroundImageElement} ref={imageRef}>
+          <div
+            className={styles.backgroundImageElement}
+            ref={imageRef}
+          >
             <Image alt="" role="presentation" {...rest} />
           </div>
-          <div className={styles.backgroundScrim} style={cssProps({ opacity })} />
+          <div
+            className={styles.backgroundScrim}
+            style={cssProps({ opacity })}
+          />
         </div>
       )}
     </Transition>
@@ -134,7 +149,11 @@ export const ProjectImage = ({ className, alt, ...rest }) => (
   </div>
 );
 
-export const ProjectSectionContent = ({ className, width = 'l', ...rest }) => (
+export const ProjectSectionContent = ({
+  className,
+  width = 'l',
+  ...rest
+}) => (
   <div
     className={classes(styles.sectionContent, className)}
     data-width={width}
@@ -142,7 +161,12 @@ export const ProjectSectionContent = ({ className, width = 'l', ...rest }) => (
   />
 );
 
-export const ProjectSectionHeading = ({ className, level = 3, as = 'h2', ...rest }) => (
+export const ProjectSectionHeading = ({
+  className,
+  level = 3,
+  as = 'h2',
+  ...rest
+}) => (
   <Heading
     className={classes(styles.sectionHeading, className)}
     as={as}
@@ -153,7 +177,12 @@ export const ProjectSectionHeading = ({ className, level = 3, as = 'h2', ...rest
 );
 
 export const ProjectSectionText = ({ className, ...rest }) => (
-  <Text className={classes(styles.sectionText, className)} size="l" as="p" {...rest} />
+  <Text
+    className={classes(styles.sectionText, className)}
+    size="l"
+    as="p"
+    {...rest}
+  />
 );
 
 export const ProjectTextRow = ({
@@ -178,7 +207,11 @@ export const ProjectTextRow = ({
   />
 );
 
-export const ProjectSectionColumns = ({ className, centered, ...rest }) => (
+export const ProjectSectionColumns = ({
+  className,
+  centered,
+  ...rest
+}) => (
   <ProjectSectionContent
     className={classes(styles.sectionColumns, className)}
     data-centered={centered}

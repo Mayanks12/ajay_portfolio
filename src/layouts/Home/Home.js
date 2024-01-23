@@ -19,7 +19,6 @@ const disciplines = [
   'Backend Engineer',
   'Software Architect',
   'DevOps Engineer',
-  'UI/UX Designer',
 ];
 
 export const Home = () => {

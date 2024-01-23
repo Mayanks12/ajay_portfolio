@@ -1,5 +1,4 @@
 import ArrowDown from 'assets/arrow-down.svg';
-import { DecoderText } from 'components/DecoderText';
 import { Heading } from 'components/Heading';
 import { Section } from 'components/Section';
 import { useTheme } from 'components/ThemeProvider';
@@ -80,7 +79,7 @@ export function Intro({
                 data-visible={visible}
                 id={titleId}
               >
-                <DecoderText text="Ajay Patidar" delay={300} />
+                Ajay Patidar
               </h1>
               <Heading level={0} as="h2" className={styles.title}>
                 <VisuallyHidden className={styles.label}>
@@ -94,7 +93,7 @@ export function Intro({
                       delay: tokens.base.durationXS,
                     })}
                   >
-                    Technologist
+                    Senior Engineer
                   </span>
                   <span
                     className={styles.line}

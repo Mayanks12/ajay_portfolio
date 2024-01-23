@@ -1,4 +1,3 @@
-import profileKatakana from 'assets/katakana-profile.svg?url';
 import profileImgPlaceholder from 'assets/profile-placeholder.jpg';
 import { Button } from 'components/Button';
 import { DecoderText } from 'components/DecoderText';
@@ -115,16 +114,16 @@ export const Profile = ({ id, visible, sectionRef }) => {
                   sizes={`(max-width: ${media.mobile}px) 100vw, 480px`}
                   alt="placeholder"
                 />
-                <svg
-                  aria-hidden="true"
-                  width="135"
-                  height="765"
-                  viewBox="0 0 135 765"
-                  className={styles.svg}
-                  data-visible={visible}
-                >
-                  <use href={`${profileKatakana}#katakana-profile`} />
-                </svg>
+                {/*<svg*/}
+                {/*  aria-hidden="true"*/}
+                {/*  width="135"*/}
+                {/*  height="765"*/}
+                {/*  viewBox="0 0 135 765"*/}
+                {/*  className={styles.svg}*/}
+                {/*  data-visible={visible}*/}
+                {/*>*/}
+                {/*  <use href={`${profileKatakana}#katakana-profile`} />*/}
+                {/*</svg>*/}
               </div>
             </div>
           </div>
